@@ -1,3 +1,5 @@
+import { Star } from "lucide-react";
+
 const Testimonials = () => {
   const testimonials = [
     {
@@ -47,7 +49,7 @@ const Testimonials = () => {
               {/* Stars */}
               <div className="flex justify-center mb-6">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <span key={i} className="text-accent text-xl">⭐</span>
+                  <Star key={i} className="w-5 h-5 text-accent fill-current" />
                 ))}
               </div>
               

@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Rocket, Clipboard } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
 
 const Hero = () => {
@@ -34,11 +35,13 @@ const Hero = () => {
             </p>
             
             <div className="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center lg:justify-start">
-              <Button variant="hero" size="lg" className="w-full sm:w-auto animate-scale-in">
-                🚀 Garantir minha vaga agora
+              <Button variant="hero" size="lg" className="w-full sm:w-auto animate-scale-in flex items-center justify-center">
+                <Rocket className="w-5 h-5 mr-2" />
+                Garantir minha vaga agora
               </Button>
-              <Button variant="outline" size="lg" className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10">
-                📋 Ver programação completa
+              <Button variant="outline" size="lg" className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10 flex items-center justify-center">
+                <Clipboard className="w-5 h-5 mr-2" />
+                Ver programação completa
               </Button>
             </div>
             

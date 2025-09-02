@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Phone, Mail } from "lucide-react";
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -99,11 +100,13 @@ const FAQ = () => {
               e ajudar você a escolher o melhor pacote.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="accent-gradient text-accent-foreground font-semibold px-6 py-3 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300">
-                📞 WhatsApp: +244 924 114 831
+              <button className="accent-gradient text-accent-foreground font-semibold px-6 py-3 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center">
+                <Phone className="w-5 h-5 mr-2" />
+                WhatsApp: +244 924 114 831
               </button>
-              <button className="border-2 border-white/30 text-white hover:bg-white/10 font-semibold px-6 py-3 rounded-xl transition-all duration-300">
-                ✉️ Enviar e-mail
+              <button className="border-2 border-white/30 text-white hover:bg-white/10 font-semibold px-6 py-3 rounded-xl transition-all duration-300 flex items-center justify-center">
+                <Mail className="w-5 h-5 mr-2" />
+                Enviar e-mail
               </button>
             </div>
           </div>

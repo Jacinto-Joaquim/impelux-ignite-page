@@ -1,3 +1,5 @@
+import { Briefcase, BookOpen, Check } from "lucide-react";
+
 const Instructor = () => {
   return (
     <section className="py-20 bg-muted/30">
@@ -51,7 +53,7 @@ const Instructor = () => {
               <div className="space-y-4 mb-8">
                 <div className="flex items-start space-x-4">
                   <div className="w-6 h-6 bg-success rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-white text-xs">✓</span>
+                    <Check className="w-3 h-3 text-white" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-secondary mb-1">Mentor de Executivos</h4>
@@ -61,7 +63,7 @@ const Instructor = () => {
                 
                 <div className="flex items-start space-x-4">
                   <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-white text-xs">✓</span>
+                    <Check className="w-3 h-3 text-white" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-secondary mb-1">Estrategista de Negócios</h4>
@@ -71,7 +73,7 @@ const Instructor = () => {
                 
                 <div className="flex items-start space-x-4">
                   <div className="w-6 h-6 bg-accent rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-white text-xs">✓</span>
+                    <Check className="w-3 h-3 text-white" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-secondary mb-1">Palestrante Internacional</h4>
@@ -86,11 +88,13 @@ const Instructor = () => {
               </blockquote>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-primary hover:bg-primary-glow text-primary-foreground font-semibold px-6 py-3 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300">
-                  📚 Ver currículo completo
+                <button className="bg-primary hover:bg-primary-glow text-primary-foreground font-semibold px-6 py-3 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center">
+                  <BookOpen className="w-5 h-5 mr-2" />
+                  Ver currículo completo
                 </button>
-                <button className="border-2 border-secondary text-secondary hover:bg-secondary/10 font-semibold px-6 py-3 rounded-xl transition-all duration-300">
-                  💼 Conectar no LinkedIn
+                <button className="border-2 border-secondary text-secondary hover:bg-secondary/10 font-semibold px-6 py-3 rounded-xl transition-all duration-300 flex items-center justify-center">
+                  <Briefcase className="w-5 h-5 mr-2" />
+                  Conectar no LinkedIn
                 </button>
               </div>
             </div>

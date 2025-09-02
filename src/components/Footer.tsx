@@ -1,3 +1,5 @@
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter } from "lucide-react";
+
 const Footer = () => {
   return (
     <footer className="bg-secondary text-white py-12">
@@ -12,13 +14,13 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a href="#" className="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-primary-glow transition-colors duration-300">
-                <span className="text-white">📘</span>
+                <Facebook className="w-5 h-5 text-white" />
               </a>
               <a href="#" className="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-primary-glow transition-colors duration-300">
-                <span className="text-white">📷</span>
+                <Instagram className="w-5 h-5 text-white" />
               </a>
               <a href="#" className="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-primary-glow transition-colors duration-300">
-                <span className="text-white">🐦</span>
+                <Twitter className="w-5 h-5 text-white" />
               </a>
             </div>
           </div>
@@ -40,19 +42,19 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4 text-accent">Contato</h4>
             <ul className="space-y-3">
               <li className="flex items-center space-x-3">
-                <span className="text-accent">📞</span>
+                <Phone className="w-5 h-5 text-accent" />
                 <span className="text-white/80">+244 924 114 831</span>
               </li>
               <li className="flex items-center space-x-3">
-                <span className="text-accent">✉️</span>
+                <Mail className="w-5 h-5 text-accent" />
                 <span className="text-white/80">contato@imprelux.com</span>
               </li>
               <li className="flex items-center space-x-3">
-                <span className="text-accent">📍</span>
+                <MapPin className="w-5 h-5 text-accent" />
                 <span className="text-white/80">Luanda, Angola</span>
               </li>
               <li className="flex items-center space-x-3">
-                <span className="text-accent">🕒</span>
+                <Clock className="w-5 h-5 text-accent" />
                 <span className="text-white/80">Seg-Sex: 8h-18h</span>
               </li>
             </ul>

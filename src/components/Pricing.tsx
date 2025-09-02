@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Flame, Smartphone, CreditCard, Check, Lightbulb } from "lucide-react";
 
 const Pricing = () => {
   const packages = [
@@ -69,8 +70,9 @@ const Pricing = () => {
               {/* Popular Badge */}
               {pkg.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="accent-gradient px-6 py-2 rounded-full text-sm font-bold text-accent-foreground">
-                    🔥 MAIS POPULAR
+                  <div className="accent-gradient px-6 py-2 rounded-full text-sm font-bold text-accent-foreground flex items-center">
+                    <Flame className="w-4 h-4 mr-2" />
+                    MAIS POPULAR
                   </div>
                 </div>
               )}
@@ -108,7 +110,7 @@ const Pricing = () => {
                     <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${
                       pkg.highlight ? 'bg-accent' : 'bg-success'
                     }`}>
-                      <span className="text-white text-xs">✓</span>
+                      <Check className="w-3 h-3 text-white" />
                     </div>
                     <span className={`text-sm leading-relaxed ${
                       pkg.highlight ? 'text-white/90' : 'text-muted-foreground'
@@ -147,7 +149,9 @@ const Pricing = () => {
             
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <div className="text-center">
-                <div className="text-3xl mb-3">💳</div>
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-3 mx-auto">
+                  <CreditCard className="w-6 h-6 text-primary" />
+                </div>
                 <h4 className="font-semibold text-secondary mb-2">Transferência Bancária</h4>
                 <p className="text-muted-foreground text-sm">
                   BAI: 0051 0000 5506 6625 1010 6<br/>
@@ -156,7 +160,9 @@ const Pricing = () => {
               </div>
               
               <div className="text-center">
-                <div className="text-3xl mb-3">📱</div>
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-3 mx-auto">
+                  <Smartphone className="w-6 h-6 text-primary" />
+                </div>
                 <h4 className="font-semibold text-secondary mb-2">WhatsApp</h4>
                 <p className="text-muted-foreground text-sm">
                   +244 924 114 831<br/>
@@ -166,7 +172,8 @@ const Pricing = () => {
             </div>
             
             <p className="text-center text-muted-foreground">
-              💡 <strong>Dica:</strong> Vagas limitadas! Garanta sua participação com pagamento antecipado.
+              <Lightbulb className="w-5 h-5 inline mr-2 text-accent" />
+              <strong>Dica:</strong> Vagas limitadas! Garanta sua participação com pagamento antecipado.
             </p>
           </div>
         </div>

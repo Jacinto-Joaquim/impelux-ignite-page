@@ -1,3 +1,4 @@
+import { Target, Phone } from "lucide-react";
 import networkingIcon from "@/assets/networking-icon.jpg";
 import strategyIcon from "@/assets/strategy-icon.jpg";
 import mentorshipIcon from "@/assets/mentorship-icon.jpg";
@@ -85,11 +86,13 @@ const Benefits = () => {
               a qualidade e exclusividade da experiência.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-primary hover:bg-primary-glow text-primary-foreground font-semibold px-8 py-4 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 glow-effect">
-                🎯 Quero participar da IMERSÃO
+              <button className="bg-primary hover:bg-primary-glow text-primary-foreground font-semibold px-8 py-4 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 glow-effect flex items-center justify-center">
+                <Target className="w-5 h-5 mr-2" />
+                Quero participar da IMERSÃO
               </button>
-              <button className="border-2 border-primary text-primary hover:bg-primary/10 font-semibold px-8 py-4 rounded-xl transition-all duration-300">
-                📞 Falar com consultor
+              <button className="border-2 border-primary text-primary hover:bg-primary/10 font-semibold px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center">
+                <Phone className="w-5 h-5 mr-2" />
+                Falar com consultor
               </button>
             </div>
           </div>
