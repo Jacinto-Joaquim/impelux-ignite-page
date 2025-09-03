@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Rocket, Clipboard } from "lucide-react";
-import heroImage from "@/assets/hero-image.jpg";
+const heroImage = "/lovable-uploads/68212218-55c9-41e1-bae4-d3b141326f14.png";
 
 const Hero = () => {
   return (
