@@ -18,15 +18,15 @@ All colors MUST be HSL.
     --popover-foreground: 222.2 84% 4.9%;
 
     /* IMPREFLIX Brand Colors */
-    --primary: 195 100% 39%; /* Bright cyan/blue */
+    --primary: 120 100% 40%; /* Bright green #00cc00 */
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 195 100% 60%;
+    --primary-glow: 120 100% 50%;
 
-    --secondary: 220 39% 11%; /* Dark navy */
+    --secondary: 210 79% 7%; /* Dark blue #071526 */
     --secondary-foreground: 0 0% 100%;
 
     --accent: 45 100% 51%; /* Vibrant yellow */
-    --accent-foreground: 220 39% 11%;
+    --accent-foreground: 210 79% 7%;
 
     --success: 120 100% 40%; /* Vibrant green */
     --success-foreground: 0 0% 100%;
@@ -45,11 +45,11 @@ All colors MUST be HSL.
     --ring: 195 100% 39%;
 
     /* Custom Design Tokens */
-    --gradient-hero: linear-gradient(135deg, hsl(220 39% 11%) 0%, hsl(195 100% 39%) 50%, hsl(195 100% 60%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(210 79% 7%) 0%, hsl(120 100% 40%) 50%, hsl(120 100% 50%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.1) 0%, hsl(0 0% 100% / 0.05) 100%);
     --gradient-accent: linear-gradient(90deg, hsl(45 100% 51%) 0%, hsl(25 95% 53%) 100%);
     
-    --shadow-glow: 0 0 30px hsl(195 100% 39% / 0.3);
+    --shadow-glow: 0 0 30px hsl(120 100% 40% / 0.3);
     --shadow-card: 0 10px 30px hsl(220 39% 11% / 0.1);
     --shadow-accent: 0 5px 20px hsl(45 100% 51% / 0.4);
 
@@ -142,7 +142,7 @@ All colors MUST be HSL.
   }
   
   .text-gradient {
-    background: linear-gradient(135deg, hsl(195 100% 39%), hsl(195 100% 60%));
+    background: linear-gradient(135deg, hsl(120 100% 40%), hsl(120 100% 50%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
