@@ -34,8 +34,8 @@ const Testimonials = () => {
           </h2>
           <div className="w-20 h-1 accent-gradient mx-auto mb-8"></div>
           <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Veja o que nossos participantes têm a dizer sobre a experiência 
-            transformadora da IMERSÃO IMPRELUX.
+            Assista aos depoimentos em vídeo sobre o mentor Edgar e sua transformação 
+            através da IMERSÃO IMPRELUX.
           </p>
         </div>
 
