@@ -1,6 +1,31 @@
+import { useRef, useState } from "react";
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter } from "lucide-react";
 
 const Footer = () => {
+    const [showToast, setShowToast] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  // Função para enviar o formulário via fetch e mostrar o toast
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const form = formRef.current;
+    if (!form) return;
+
+    const formData = new FormData(form);
+
+    await fetch(
+      "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfqQJhPyPc5Vus5m57mIhxdgNQ0bfvgXqxeY1sF1oPBguvR0A/formResponse",
+      {
+        method: "POST",
+        body: formData,
+        mode: "no-cors",
+      }
+    );
+    form.reset();
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 3500);
+  };
+
   return (
     <footer className="bg-secondary text-white py-12">
       <div className="container mx-auto px-6">
@@ -60,24 +85,38 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Newsletter */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4 text-accent">Newsletter</h4>
-            <p className="text-white/80 text-sm mb-4">
-              Receba dicas exclusivas e seja o primeiro a saber sobre novos eventos.
-            </p>
-            <div className="space-y-3">
-              <input 
-                type="email" 
-                placeholder="Seu melhor e-mail"
-                className="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-accent transition-colors duration-300"
-              />
-              <button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold py-2 rounded-lg transition-colors duration-300">
-                Inscrever-se
-              </button>
-            </div>
-          </div>
-        </div>
+      {/* Newsletter */}
+                <div>
+                  <h4 className="text-lg font-semibold mb-4 text-accent">Newsletter</h4>
+                  <p className="text-white/80 text-sm mb-4">
+                    Receba dicas exclusivas e seja o primeiro a saber sobre novos eventos.
+                  </p>
+                  <form
+                    ref={formRef}
+                    onSubmit={handleNewsletterSubmit}
+                    className="space-y-3"
+                  >
+                    <input
+                      type="email"
+                      name="entry.1961469268"
+                      required
+                      placeholder="Seu melhor e-mail"
+                      className="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-accent transition-colors duration-300"
+                    />
+                    <button
+                      type="submit"
+                      className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold py-2 rounded-lg transition-colors duration-300"
+                    >
+                      Inscrever-se
+                    </button>
+                  </form>
+                  {showToast && (
+                    <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-success-gradient text-success-foreground px-6 py-3 rounded-xl shadow-lg z-50 font-semibold animate-fade-in-up">
+                      E-mail cadastrado com sucesso!
+                    </div>
+                  )}
+                </div>
+              </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-white/20 pt-8">
@@ -85,17 +124,11 @@ const Footer = () => {
             <div className="text-white/60 text-sm mb-4 md:mb-0">
               © 2024 IMPRELUX. Todos os direitos reservados.
             </div>
-            <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-white/60 hover:text-accent transition-colors duration-300">
-                Política de Privacidade
-              </a>
-              <a href="#" className="text-white/60 hover:text-accent transition-colors duration-300">
-                Termos de Uso
-              </a>
-              <a href="#" className="text-white/60 hover:text-accent transition-colors duration-300">
-                Cookies
-              </a>
-            </div>
+        <div className="flex space-x-6 text-sm">
+          <span className="text-white/80 font-semibold">Garanta sua vaga!</span>
+          <span className="text-white/80 font-semibold">Transforme seu negócio!</span>
+          <span className="text-white/80 font-semibold">Últimas vagas disponíveis!</span>
+        </div>
           </div>
         </div>
       </div>

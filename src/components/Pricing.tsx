@@ -122,15 +122,22 @@ const Pricing = () => {
               </ul>
 
               {/* CTA Button */}
-              <Button 
-                className={`w-full py-4 text-lg font-semibold rounded-xl transition-all duration-300 ${
-                  pkg.highlight 
-                    ? 'bg-white text-secondary hover:bg-white/90 shadow-lg'
-                    : 'bg-primary hover:bg-primary-glow text-primary-foreground glow-effect'
-                }`}
-              >
-                {pkg.cta}
-              </Button>
+          <Button 
+            className={`w-full py-4 text-lg font-semibold rounded-xl transition-all duration-300 ${
+              pkg.highlight 
+                ? 'bg-white text-secondary hover:bg-white/90 shadow-lg'
+                : 'bg-primary hover:bg-primary-glow text-primary-foreground glow-effect'
+            }`}
+            onClick={() => {
+              const mensagem = `Olá! Tenho interesse no ${pkg.name} da Imersão Imprelux.`;
+              window.open(
+                `https://wa.me/244924114831?text=${encodeURIComponent(mensagem)}`,
+                "_blank"
+              );
+            }}
+          >
+            {pkg.cta}
+          </Button>
 
               {/* Additional Info */}
               <div className="text-center mt-6">

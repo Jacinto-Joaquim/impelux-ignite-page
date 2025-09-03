@@ -17,7 +17,7 @@ const Instructor = () => {
             <div className="text-center lg:text-left animate-fade-in-up">
               <div className="relative inline-block">
                 <img 
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&h=600&fit=crop&crop=face"
+                  src="lovable-uploads/edgar.png"
                   alt="Edgar L. Capambo - Mentor IMPRELUX"
                   className="w-80 h-96 object-cover rounded-2xl shadow-2xl mx-auto lg:mx-0"
                 />
@@ -29,7 +29,7 @@ const Instructor = () => {
                 </div>
                 <div className="absolute -top-6 -left-6 card-gradient rounded-xl p-4">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-accent">500+</div>
+                    <div className="text-2xl font-bold text-accent">50+</div>
                     <div className="text-sm text-muted-foreground">Empresas transformadas</div>
                   </div>
                 </div>
@@ -47,7 +47,7 @@ const Instructor = () => {
               
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 Com mais de uma década de experiência no mercado empresarial, Edgar é reconhecido 
-                como um dos principais especialistas em transformação de negócios em Angola e África.
+                como um especialistas em transformação de negócios em Angola.
               </p>
 
               <div className="space-y-4 mb-8">
@@ -57,7 +57,7 @@ const Instructor = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-secondary mb-1">Mentor de Executivos</h4>
-                    <p className="text-muted-foreground">Orientou mais de 500 empresários a alcançarem resultados extraordinários</p>
+                    <p className="text-muted-foreground">Orientou mais de 70 empreendedores a alcançarem resultados extraordinários</p>
                   </div>
                 </div>
                 
@@ -76,8 +76,8 @@ const Instructor = () => {
                     <Check className="w-3 h-3 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-secondary mb-1">Palestrante Internacional</h4>
-                    <p className="text-muted-foreground">Reconhecido em eventos de negócios por toda a África</p>
+                    <h4 className="font-semibold text-secondary mb-1">Palestrante</h4>
+                    <p className="text-muted-foreground">Reconhecido em eventos de negócios em Angola</p>
                   </div>
                 </div>
               </div>

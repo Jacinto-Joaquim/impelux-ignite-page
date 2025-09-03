@@ -8,69 +8,91 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base */
+    --background: 210 42% 11%;   /* #031c36 */
+    --foreground: 0 0% 100%;     /* branco */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 210 42% 13%;         
+    --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 210 42% 13%;
+    --popover-foreground: 0 0% 100%;
 
-    /* IMPREFLIX Brand Colors */
-    --primary: 120 100% 40%; /* Bright green #00cc00 */
+    /* Botões (verde destaque) */
+    --primary: 120 100% 40%; /* verde claro #00cc00 */
     --primary-foreground: 0 0% 100%;
     --primary-glow: 120 100% 50%;
 
-    --secondary: 209 81% 9%; /* Dark blue #041527 */
-    --secondary-foreground: 0 0% 100%;
+    /* Azul escuro complementar */
+    --secondary: 207 39% 34%; /* #335774 */
+    --secondary-foreground: 210 20% 90%; /* cinza azulado claro #e0e6ed */
 
-    --accent: 45 100% 51%; /* Vibrant yellow */
-    --accent-foreground: 210 79% 7%;
+    /* Amarelo/acento */
+    --accent: 45 100% 51%; 
+    --accent-foreground: 210 20% 90%; 
 
-    --success: 120 100% 40%; /* Vibrant green */
+    /* Verde reservado para mensagens de sucesso */
+    --success: 120 100% 40%;
     --success-foreground: 0 0% 100%;
 
-    --warning: 25 95% 53%; /* Vibrant orange */
+    /* Laranja/alerta */
+    --warning: 25 95% 53%;
     --warning-foreground: 0 0% 100%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
+    /* Cinzas */
+    --muted: 210 20% 25%;
+    --muted-foreground: 210 20% 90%; /* #e0e6ed */
 
+    /* Vermelho/destrutivo */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
+    /* Bordas, inputs e anéis */
+    --border: 207 39% 34%;       /* atualizado para #335774 */
+    --input: 207 39% 34%;        /* atualizado para #335774 */
     --ring: 195 100% 39%;
 
-    /* Custom Design Tokens */
-    --gradient-hero: linear-gradient(135deg, hsl(209 81% 9%) 0%, hsl(120 100% 40%) 50%, hsl(120 100% 50%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.1) 0%, hsl(0 0% 100% / 0.05) 100%);
-    --gradient-accent: linear-gradient(90deg, hsl(45 100% 51%) 0%, hsl(25 95% 53%) 100%);
-    
-    --shadow-glow: 0 0 30px hsl(120 100% 40% / 0.3);
-    --shadow-card: 0 10px 30px hsl(220 39% 11% / 0.1);
-    --shadow-accent: 0 5px 20px hsl(45 100% 51% / 0.4);
+    /* Gradientes */
+    --gradient-hero: linear-gradient(
+      135deg, 
+      hsl(210 42% 11%) 0%,  /* azul profundo */
+      hsl(207 39% 34%) 50%, /* #335774 */
+      hsl(210 42% 30%) 100% 
+    );
 
+    --gradient-card: linear-gradient(
+      145deg, 
+      hsl(0 0% 100% / 0.05) 0%, 
+      hsl(0 0% 100% / 0.02) 100%
+    );
+
+    --gradient-accent: linear-gradient(
+      90deg, 
+      hsl(207 39% 34%) 0%,  /* #335774 */
+      hsl(210 42% 30%) 100%
+    );
+
+    /* Sombras */
+    --shadow-glow: 0 0 30px hsl(120 100% 40% / 0.3);
+    --shadow-card: 0 10px 30px hsl(210 42% 11% / 0.2);
+    --shadow-accent: 0 5px 20px hsl(207 39% 34% / 0.4);
+
+    /* Radius */
     --radius: 1rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
+    /* Sidebar */
+    --sidebar-background: 210 42% 13%;
+    --sidebar-foreground: 210 20% 90%; 
+    --sidebar-primary: 207 39% 34%; /* #335774 */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 42% 25%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 207 39% 34%; /* #335774 */
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
+
+
 
   .dark {
     --background: 222.2 84% 4.9%;
@@ -147,7 +169,10 @@ All colors MUST be HSL.
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  
+  /* Adicione ao seu CSS */
+.success-gradient {
+  background: linear-gradient(90deg, hsl(120 100% 40%), hsl(120 100% 50%));
+}
   .glow-effect {
     box-shadow: var(--shadow-glow);
   }

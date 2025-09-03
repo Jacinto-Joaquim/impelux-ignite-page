@@ -22,10 +22,6 @@ const FAQ = () => {
       answer: "Sim! Oferecemos opções de parcelamento flexível. Entre em contato via WhatsApp (+244 924 114 831) para conhecer as condições especiais e facilitar seu investimento."
     },
     {
-      question: "E se eu não ficar satisfeito com o conteúdo?",
-      answer: "Oferecemos garantia de satisfação. Se nos primeiros 30 minutos do primeiro dia você não estiver satisfeito com o conteúdo, devolvemos 100% do seu investimento, sem questionamentos."
-    },
-    {
       question: "Receberei certificado de participação?",
       answer: "Sim! Todos os participantes recebem certificado de participação digital e físico, validando as horas de treinamento e o conhecimento adquirido durante a imersão."
     },
@@ -100,14 +96,11 @@ const FAQ = () => {
               e ajudar você a escolher o melhor pacote.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="accent-gradient text-accent-foreground font-semibold px-6 py-3 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center">
+              <button className="success-gradient accent-gradient text-accent-foreground font-semibold px-6 py-3 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center" onClick={() => window.open("https://wa.me/244924114831", "_blank")}>
                 <Phone className="w-5 h-5 mr-2" />
                 WhatsApp: +244 924 114 831
               </button>
-              <button className="border-2 border-white/30 text-white hover:bg-white/10 font-semibold px-6 py-3 rounded-xl transition-all duration-300 flex items-center justify-center">
-                <Mail className="w-5 h-5 mr-2" />
-                Enviar e-mail
-              </button>
+
             </div>
           </div>
         </div>

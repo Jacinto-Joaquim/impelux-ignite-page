@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Rocket, Clipboard } from "lucide-react";
+import React, { useState } from "react";
 const heroImage = "/lovable-uploads/68212218-55c9-41e1-bae4-d3b141326f14.png";
 
 const Hero = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <section className="relative min-h-screen hero-gradient overflow-hidden">
       {/* Background Effects */}
@@ -34,16 +37,45 @@ const Hero = () => {
               que vai elevar seu negócio a um novo patamar de excelência.
             </p>
             
-            <div className="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center lg:justify-start">
-              <Button variant="hero" size="lg" className="w-full sm:w-auto animate-scale-in flex items-center justify-center">
-                <Rocket className="w-5 h-5 mr-2" />
-                Garantir minha vaga agora
-              </Button>
-              <Button variant="outline" size="lg" className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10 flex items-center justify-center">
-                <Clipboard className="w-5 h-5 mr-2" />
-                Ver programação completa
-              </Button>
-            </div>
+          <div className="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center lg:justify-start">
+                  <Button
+                    variant="hero"
+                    size="lg"
+                    className="w-full sm:w-auto animate-scale-in flex items-center justify-center"
+                    onClick={() => window.location.href = "https://wa.me/244924114831"}
+                  >
+                    <Rocket className="w-5 h-5 mr-2" />
+                    Garantir minha vaga agora
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10 flex items-center justify-center"
+                    onClick={() => setShowModal(true)}
+                  >
+                    <Clipboard className="w-5 h-5 mr-2" />
+                    Ver programação completa
+                  </Button>
+                </div>
+                  {/* Modal */}
+                {showModal && (
+                  <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+                    <div className="bg-white rounded-xl p-6 relative max-w-lg w-full">
+                      <button
+                        className="absolute top-2 right-2 text-black text-xl font-bold"
+                        onClick={() => setShowModal(false)}
+                      >
+                        &times;
+                      </button>
+                      <img
+                        src="/lovable-uploads/plano imprelux.jpg"
+                        alt="Plano Imprelux"
+                        className="w-full h-auto rounded-lg"
+                        style={{ border: "none"}}
+                      />
+                    </div>
+                  </div>
+                )}
             
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/20">
@@ -57,7 +89,7 @@ const Hero = () => {
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-warning">+50</div>
-                <div className="text-sm text-white/70">Empresários</div>
+                <div className="text-sm text-white/70">Empreendedores</div>
               </div>
             </div>
           </div>

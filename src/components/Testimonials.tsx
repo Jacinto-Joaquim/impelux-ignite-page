@@ -1,29 +1,42 @@
+import { useRef } from "react";
 import { Star, Play } from "lucide-react";
 
 const Testimonials = () => {
   const videoTestimonials = [
     {
-      name: "Carlos Mendoza",
-      position: "CEO da TechSolutions",
+      name: "Alfredo Zola Cane",
+      position: "CEO da Papy Liria Comercial",
       thumbnail: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=300&fit=crop&crop=face",
-      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
-      quote: "Edgar transformou completamente minha visão de negócios. Um mentor excepcional!"
+      videoUrl: "/lovable-uploads/testemunho1.MP4",
+      quote: "De vendedor de rua a dono de uma empresa de produtos masculinos que entrega em todo o país."
     },
     {
-      name: "Ana Paula Silva",
-      position: "Fundadora da Inovação Digital",
+      name: "Conceição Calepete",
+      position: "Sócia da Maholly Excellence",
       thumbnail: "https://images.unsplash.com/photo-1494790108755-2616b612b566?w=400&h=300&fit=crop&crop=face",
-      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
-      quote: "A metodologia do Edgar é única. Ele consegue extrair o melhor de cada participante."
+      videoUrl: "/lovable-uploads/testemunho2.MP4",
+      quote: "De dificuldades para fechar vendas a referência em identidade visual, conquistando clientes todos os dias."
     },
     {
-      name: "Ricardo Santos",
-      position: "Diretor Comercial",
+      name: "Telson Dias",
+      position: "CEO da Flash Delirante",
       thumbnail: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=face",
-      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
-      quote: "Edgar é um mentor inspirador. Sua experiência e conhecimento são impressionantes."
+      videoUrl: "/lovable-uploads/testemunho3.MP4",
+      quote: "De fotógrafo anônimo a empresário que cobre mais de 2 eventos por dia, com equipa e faturamento dobrado."
     }
   ];
+
+    // Array de refs para cada vídeo
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+
+  // Função para pausar todos os vídeos menos o atual
+  const handlePlay = (currentIndex: number) => {
+    videoRefs.current.forEach((video, idx) => {
+      if (video && idx !== currentIndex) {
+        video.pause();
+      }
+    });
+  };
 
   return (
     <section className="py-20 hero-gradient">
@@ -35,7 +48,7 @@ const Testimonials = () => {
           <div className="w-20 h-1 accent-gradient mx-auto mb-8"></div>
           <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
             Assista aos depoimentos em vídeo sobre o mentor Edgar e sua transformação 
-            através da IMERSÃO IMPRELUX.
+            através de suas CONSULTORIA.
           </p>
         </div>
 
@@ -48,18 +61,29 @@ const Testimonials = () => {
             >
               {/* Video Container */}
               <div className="relative aspect-video bg-black/20 mb-6">
-                <img 
-                  src={testimonial.thumbnail} 
-                  alt={`Depoimento de ${testimonial.name}`}
-                  className="w-full h-full object-cover"
-                />
+                <video
+                  ref={el => videoRefs.current[index] = el}
+                  src={testimonial.videoUrl}
+                  controls
+                  controlsList="nodownload"
+                  preload="metadata"
+                  className="w-full h-full object-cover rounded-lg"
+                  poster=""
+                  disablePictureInPicture={false}
+                  onPlay={() => handlePlay(index)}
+                >
+                  Seu navegador não suporta vídeo.
+                </video>
                 
                 {/* Play Button Overlay */}
+
+              {/*                 
                 <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/20 transition-all duration-300">
-                  <button className="w-16 h-16 bg-accent rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
-                    <Play className="w-6 h-6 text-white ml-1" fill="currentColor" />
-                  </button>
+                    <button className="w-16 h-16 bg-accent rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
+                      <Play className="w-6 h-6 text-white ml-1" fill="currentColor" />
+                    </button>
                 </div>
+                 */}
               </div>
 
               <div className="p-6">
@@ -97,8 +121,8 @@ const Testimonials = () => {
               <div className="text-white/70 text-sm">Satisfação dos participantes</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-success mb-2">+500</div>
-              <div className="text-white/70 text-sm">Empresários transformados</div>
+              <div className="text-3xl font-bold text-success mb-2">+70</div>
+              <div className="text-white/70 text-sm">Empreendedores transformados</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-warning mb-2">4.9</div>
