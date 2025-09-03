@@ -1,27 +1,27 @@
-import { Star } from "lucide-react";
+import { Star, Play } from "lucide-react";
 
 const Testimonials = () => {
-  const testimonials = [
+  const videoTestimonials = [
     {
       name: "Carlos Mendoza",
       position: "CEO da TechSolutions",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-      testimonial: "A IMERSÃO IMPRELUX transformou completamente minha visão de negócios. Em apenas 2 dias, aprendi estratégias que levaram minha empresa a crescer 300% em 6 meses.",
-      rating: 5
+      thumbnail: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=300&fit=crop&crop=face",
+      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+      quote: "Edgar transformou completamente minha visão de negócios. Um mentor excepcional!"
     },
     {
       name: "Ana Paula Silva",
       position: "Fundadora da Inovação Digital",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b566?w=150&h=150&fit=crop&crop=face",
-      testimonial: "O networking foi incrível! Fiz parcerias estratégicas que mudaram o rumo da minha empresa. O conteúdo é de altíssima qualidade e aplicabilidade imediata.",
-      rating: 5
+      thumbnail: "https://images.unsplash.com/photo-1494790108755-2616b612b566?w=400&h=300&fit=crop&crop=face",
+      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+      quote: "A metodologia do Edgar é única. Ele consegue extrair o melhor de cada participante."
     },
     {
       name: "Ricardo Santos",
       position: "Diretor Comercial",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-      testimonial: "Experiência transformadora! Saí da imersão com clareza total sobre onde quero chegar e como fazer isso acontecer. Recomendo a todos os empreendedores sérios.",
-      rating: 5
+      thumbnail: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=face",
+      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+      quote: "Edgar é um mentor inspirador. Sua experiência e conhecimento são impressionantes."
     }
   ];
 
@@ -40,37 +40,50 @@ const Testimonials = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {testimonials.map((testimonial, index) => (
+          {videoTestimonials.map((testimonial, index) => (
             <div 
               key={index}
-              className="card-gradient rounded-2xl p-8 shadow-card animate-scale-in hover:shadow-xl transition-all duration-300"
+              className="card-gradient rounded-2xl overflow-hidden shadow-card animate-scale-in hover:shadow-xl transition-all duration-300 group"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              {/* Stars */}
-              <div className="flex justify-center mb-6">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-accent fill-current" />
-                ))}
-              </div>
-              
-              {/* Testimonial */}
-              <blockquote className="text-white/90 text-center mb-8 leading-relaxed">
-                "{testimonial.testimonial}"
-              </blockquote>
-              
-              {/* Author */}
-              <div className="text-center">
+              {/* Video Container */}
+              <div className="relative aspect-video bg-black/20 mb-6">
                 <img 
-                  src={testimonial.image} 
-                  alt={testimonial.name}
-                  className="w-16 h-16 rounded-full mx-auto mb-4 object-cover ring-4 ring-accent/30"
+                  src={testimonial.thumbnail} 
+                  alt={`Depoimento de ${testimonial.name}`}
+                  className="w-full h-full object-cover"
                 />
-                <h4 className="font-bold text-white text-lg mb-1">
-                  {testimonial.name}
-                </h4>
-                <p className="text-white/70 text-sm">
-                  {testimonial.position}
-                </p>
+                
+                {/* Play Button Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/20 transition-all duration-300">
+                  <button className="w-16 h-16 bg-accent rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
+                    <Play className="w-6 h-6 text-white ml-1" fill="currentColor" />
+                  </button>
+                </div>
+              </div>
+
+              <div className="p-6">
+                {/* Quote */}
+                <blockquote className="text-white/90 text-center mb-6 leading-relaxed italic">
+                  "{testimonial.quote}"
+                </blockquote>
+                
+                {/* Author */}
+                <div className="text-center">
+                  <h4 className="font-bold text-white text-lg mb-1">
+                    {testimonial.name}
+                  </h4>
+                  <p className="text-white/70 text-sm">
+                    {testimonial.position}
+                  </p>
+                </div>
+
+                {/* Star Rating */}
+                <div className="flex justify-center mt-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 text-accent fill-current" />
+                  ))}
+                </div>
               </div>
             </div>
           ))}
