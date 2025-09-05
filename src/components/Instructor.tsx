@@ -88,11 +88,11 @@ const Instructor = () => {
               </blockquote>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-primary hover:bg-primary-glow text-primary-foreground font-semibold px-6 py-3 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center">
+                <button className="bg-primary hover:bg-primary-glow text-primary-foreground font-semibold px-6 py-3 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center" onClick={() => window.location.href = "https://www.linkedin.com/in/edcap-e-gest%C3%A3o-157078360/"}>
                   <BookOpen className="w-5 h-5 mr-2" />
                   Ver currículo completo
                 </button>
-                <button className="border-2 border-secondary text-secondary hover:bg-secondary/10 font-semibold px-6 py-3 rounded-xl transition-all duration-300 flex items-center justify-center">
+                <button className="border-2 border-secondary text-secondary hover:bg-secondary/10 font-semibold px-6 py-3 rounded-xl transition-all duration-300 flex items-center justify-center" onClick={() => window.location.href = "https://www.linkedin.com/in/edcap-e-gest%C3%A3o-157078360/"}>
                   <Briefcase className="w-5 h-5 mr-2" />
                   Conectar no LinkedIn
                 </button>

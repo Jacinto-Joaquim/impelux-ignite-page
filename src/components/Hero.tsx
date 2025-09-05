@@ -41,7 +41,7 @@ const Hero = () => {
                   <Button
                     variant="hero"
                     size="lg"
-                    className="w-full sm:w-auto animate-scale-in flex items-center justify-center"
+                    className="bg-primary hover:bg-primary-glow text-primary-foreground w-full sm:w-auto animate-scale-in flex items-center justify-center"
                     onClick={() => window.location.href = "https://wa.me/244924114831"}
                   >
                     <Rocket className="w-5 h-5 mr-2" />
